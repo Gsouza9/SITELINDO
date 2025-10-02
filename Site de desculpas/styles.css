@@ -1,0 +1,156 @@
+/* Estilo geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa principal */
+.container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(14px);
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    max-width: 550px;
+    width: 90%;
+}
+
+/* Títulos */
+h1 {
+    color: #fff;
+    font-size: 28px;
+    font-family: 'Brush Script MT', cursive;
+    margin-bottom: 20px;
+}
+
+/* Texto */
+p {
+    font-size: 18px;
+    color: #fff;
+    margin: 20px 0;
+    transition: all 0.5s ease;
+    line-height: 1.6;
+}
+
+/* Botão */
+button {
+    background: #ff4e75;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background: #ff1e56;
+    transform: scale(1.05);
+}
+
+/* Link estilo botão */
+.link-carta {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    background: #fff;
+    color: #ff4e75;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.link-carta:hover {
+    background: #ff4e75;
+    color: white;
+}
+
+/* Página da carta */
+.carta p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: justify;
+    font-family: 'Georgia', serif;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    p, .carta p {
+        font-size: 16px;
+    }
+
+    button, .link-carta {
+        width: 100%;
+        font-size: 17px;
+        padding: 14px;
+    }
+
+    .container {
+        padding: 25px;
+    }
+}
+/* Botão especial para a carta */
+.btn-carta {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #ff4e75, #ff7096);
+    color: white;
+    border: none;
+    border-radius: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.btn-carta:hover {
+    background: linear-gradient(135deg, #ff1e56, #ff4e75);
+    transform: scale(1.07);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+.heart {
+    position: fixed;
+    font-size: 20px;
+    animation: voar 6s linear forwards;
+    opacity: 0.9;
+    z-index: -1; /* Mantém atrás do conteúdo */
+    pointer-events: none; /* Não atrapalha cliques */
+}
+
+/* Animação de voo aleatório */
+@keyframes voar {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) rotate(360deg) scale(1.3);
+        opacity: 0;
+    }
+}
